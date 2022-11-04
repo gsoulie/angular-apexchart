@@ -2,8 +2,8 @@
 
 ## Installation
 
-Documentation : https://apexcharts.com/docs/angular-charts/
-Line chart : https://apexcharts.com/docs/chart-types/line-chart/
+Documentation : https://apexcharts.com/docs/angular-charts/      
+Line chart : https://apexcharts.com/docs/chart-types/line-chart/      
 
 ````
 npm install apexcharts ng-apexcharts --save 
