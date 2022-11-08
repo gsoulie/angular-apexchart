@@ -8,6 +8,8 @@ import {
   ApexChart,
   ApexXAxis,
   ApexTitleSubtitle,
+  ApexDataLabels,
+  ApexPlotOptions
 } from "ng-apexcharts";
 
 export type ChartOptions = {
@@ -15,6 +17,9 @@ export type ChartOptions = {
   chart: ApexChart;
   xaxis: ApexXAxis;
   title: ApexTitleSubtitle;
+  dataLabels: ApexDataLabels;
+  plotOptions: ApexPlotOptions;
+  colors: string[];
 };
 
 @Component({
@@ -31,6 +36,9 @@ export type ChartOptions = {
       [chart]="chartOptions.chart"
       [xaxis]="chartOptions.xaxis"
       [title]="chartOptions.title"
+      [dataLabels]="chartOptions.dataLabels"
+      [plotOptions]="chartOptions.plotOptions"
+      [colors]="chartOptions.colors"
       ></apx-chart>
     </div>
   `
@@ -49,12 +57,27 @@ export class BarchartComponent {
           data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
         }
       ],
+      colors: ['#FEB019'],
       chart: {
         height: 350,
         type: "bar"
       },
       title: {
         text: "My First Angular Chart"
+      },
+      plotOptions: {
+        bar: {
+          dataLabels: {
+            position: "top" // top, center, bottom
+          }
+        }
+      },
+      dataLabels: {
+        enabled: true,
+        offsetY: -20,
+        style: {
+          colors: ['#ee1111']
+        }
       },
       xaxis: {
         categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"]
